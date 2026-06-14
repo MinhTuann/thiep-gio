@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    // Collection: rsvps
+    // Document ID: Auto-generated
+    // Fields:
+    //   - guestName: string (required, max 100 chars)
+    //   - attending: boolean (required)
+    //   - guestCount: number (required, 0-10)
+    //   - createdAt: timestamp (required, server timestamp)
+    // ===============================================================
+    
+    function isValidRSVP() {
+      let data = request.resource.data;
+      return data.keys().hasOnly(['guestName', 'attending', 'guestCount', 'createdAt']) &&
+             data.guestName is string && data.guestName.size() > 0 && data.guestName.size() <= 100 &&
+             data.attending is bool &&
+             data.guestCount is number && data.guestCount >= 0 && data.guestCount <= 10 &&
+             data.createdAt == request.time;
+    }
+
+    match /rsvps/{rsvpId} {
+      // Allow public reads so the dashboard can fetch data. 
+      // (In a real app with Auth, you would restrict this to admins).
+      allow read: if true;
+      
+      // Allow anyone to submit an RSVP as long as the data is valid
+      allow create: if isValidRSVP();
+      
+      // Do not allow edits or deletions after submission
+      allow update, delete: if false;
+    }
+  }
+}
