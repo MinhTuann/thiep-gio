@@ -64,7 +64,7 @@ export default function RsvpForm({ onSubmitSuccess }) {
     <section className="page-section animate-fade-in" style={{ padding: 0, position: 'relative' }}>
       {/* Background Image */}
       <img
-        src="/form-page.png"
+        src={`${import.meta.env.BASE_URL}form-page.png`}
         alt="RSVP Background"
         style={{ width: '100%', height: 'auto', display: 'block' }}
       />

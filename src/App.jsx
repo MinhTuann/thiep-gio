@@ -18,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     // Initialize audio
-    audioRef.current = new Audio('/avem-maria.mp3');
+    audioRef.current = new Audio(`${import.meta.env.BASE_URL}avem-maria.mp3`);
     audioRef.current.loop = true;
 
     const handleLocationChange = () => {

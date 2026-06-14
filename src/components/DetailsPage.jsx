@@ -58,7 +58,7 @@ export default function DetailsPage({ onNavigateToRsvp }) {
   return (
     <section className="page-section animate-fade-in" style={{ padding: 0, position: 'relative' }}>
       <img 
-        src="/details-page.png" 
+        src={`${import.meta.env.BASE_URL}details-page.png`}
         alt="Chi tiết thiệp mời" 
         style={{ width: '100%', height: 'auto', display: 'block' }} 
       />

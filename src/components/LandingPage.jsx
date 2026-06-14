@@ -3,12 +3,12 @@ export default function LandingPage({ onOpenCard }) {
     <section className="figma-landing-section animate-fade-in">
       <div className="figma-landing-card">
         <img
-          src="/landing-page-floral-decoration-top.png"
+          src={`${import.meta.env.BASE_URL}landing-page-floral-decoration-top.png`}
           alt=""
           className="landing-floral-top"
         />
         <img
-          src="/figma-landing-card.png"
+          src={`${import.meta.env.BASE_URL}figma-landing-card.png`}
           alt="Thiệp mời lễ giỗ 1 năm Maria Nguyễn Thị Thi, Thứ bảy 11/07/2026"
           className="figma-landing-image"
         />
@@ -20,7 +20,7 @@ export default function LandingPage({ onOpenCard }) {
           Mở thiệp
         </button>
         <img
-          src="/landing-page-floral-decoration-bottom.png"
+          src={`${import.meta.env.BASE_URL}landing-page-floral-decoration-bottom.png`}
           alt=""
           className="landing-floral-bottom"
         />

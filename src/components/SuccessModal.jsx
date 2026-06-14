@@ -99,7 +99,7 @@ export default function SuccessModal({ isOpen, isAttending, onClose }) {
         {/* Holy Dove Icon container */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px', marginTop: '16px' }}>
           <img 
-            src="/success-modal.png" 
+            src={`${import.meta.env.BASE_URL}success-modal.png`}
             alt="Dove" 
             style={{ width: '120px', height: '120px', borderRadius: '50%' }} 
           />
