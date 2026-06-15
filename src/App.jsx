@@ -72,6 +72,9 @@ export default function App() {
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setCardOpened(false);
+    setShowRsvp(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
