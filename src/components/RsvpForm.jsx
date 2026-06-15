@@ -210,7 +210,8 @@ export default function RsvpForm({ onSubmitSuccess }) {
                 min={MIN_GUEST_COUNT}
                 max={MAX_GUEST_COUNT}
                 value={guestCount}
-                onChange={(e) => setGuestCount(normalizeGuestCount(e.target.value))}
+                onChange={(e) => setGuestCount(e.target.value)}
+                onBlur={() => setGuestCount(normalizeGuestCount(guestCount))}
                 disabled={loading}
                 required
                 style={{

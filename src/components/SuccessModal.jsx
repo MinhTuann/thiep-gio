@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { HolyDove } from './FloralDecorations';
 
 // Initialize the invokers polyfill if necessary (dynamic load on client side)
 if (typeof window !== 'undefined' && !('commandForElement' in HTMLButtonElement.prototype)) {
@@ -52,27 +51,27 @@ export default function SuccessModal({ isOpen, isAttending, onClose }) {
   };
 
   return (
-    <dialog 
+    <dialog
       ref={dialogRef}
       onCancel={handleCancel}
       onClick={handleBackdropClick}
       // Modern standard attribute for light-dismiss (Esc + backdrop click + mobile dismiss gestures)
       closedby="any"
     >
-      <div 
-        className="modal-card" 
-        style={{ 
-          backgroundColor: '#FFFFFF', 
-          borderRadius: '32px', 
-          padding: '40px 24px', 
-          textAlign: 'center', 
+      <div
+        className="modal-card"
+        style={{
+          backgroundColor: '#FFFFFF',
+          borderRadius: '32px',
+          padding: '40px 24px',
+          textAlign: 'center',
           position: 'relative',
           maxWidth: '400px',
           margin: '0 auto'
         }}
       >
         {/* Close Button 'X' */}
-        <button 
+        <button
           onClick={onClose}
           aria-label="Đóng"
           style={{
@@ -98,18 +97,18 @@ export default function SuccessModal({ isOpen, isAttending, onClose }) {
 
         {/* Holy Dove Icon container */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px', marginTop: '16px' }}>
-          <img 
+          <img
             src={`${import.meta.env.BASE_URL}success-modal.png`}
-            alt="Dove" 
-            style={{ width: '120px', height: '120px', borderRadius: '50%' }} 
+            alt="Dove"
+            style={{ width: '120px', height: '120px', borderRadius: '50%' }}
           />
         </div>
 
         {/* Title */}
-        <h2 style={{ 
-          color: '#16172B', 
-          fontSize: '24px', 
-          fontWeight: '700', 
+        <h2 style={{
+          color: '#16172B',
+          fontSize: '24px',
+          fontWeight: '700',
           marginBottom: '16px',
           fontFamily: 'system-ui, -apple-system, sans-serif'
         }}>
@@ -117,10 +116,10 @@ export default function SuccessModal({ isOpen, isAttending, onClose }) {
         </h2>
 
         {/* Success message body */}
-        <p style={{ 
-          color: '#16172B', 
-          fontSize: '16px', 
-          lineHeight: '1.6', 
+        <p style={{
+          color: '#16172B',
+          fontSize: '16px',
+          lineHeight: '1.6',
           margin: 0,
           fontWeight: '400'
         }}>
@@ -130,7 +129,7 @@ export default function SuccessModal({ isOpen, isAttending, onClose }) {
             </>
           ) : (
             <>
-              Gia đình chúng tôi đã nhận được xác nhận của bạn. Cám ơn bạn đã hồi âm.<br/>
+              Gia đình chúng tôi đã nhận được xác nhận của bạn. Cám ơn bạn đã hồi âm.<br />
               Xin Chúa ban muôn ơn lành đến với bạn.
             </>
           )}
