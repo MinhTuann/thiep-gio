@@ -42,7 +42,7 @@ export default function App() {
     setIsPlaying(!isPlaying);
   };
 
-  if (currentPath === '/dashboard') {
+  if (currentPath.endsWith('/dashboard')) {
     return <Dashboard />;
   }
 
